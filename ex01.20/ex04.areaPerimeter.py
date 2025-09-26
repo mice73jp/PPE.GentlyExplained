@@ -1,14 +1,24 @@
 def area(width, length):
+    if width < 0 or length < 0:
+        raise ValueError
     return width * length
 
 def perimeter(width, length):
+    if width < 0 or length < 0:
+        raise ValueError
     return 2 * ( width + length )
 
 def volume(width, length, height):
+    if any( one < 0 for one in [width, length, height]):
+        raise ValueError
+
     return width * length * height
 
 def surfaceArea(width, length, height):
-    return (width * length * 2) + (width * height * 2) + (length * height * 2)
+    if any( one < 0 for one in [width, length, height]):
+        raise ValueError
+
+    return ((width * length) + (width * height) + (length * height)) * 2
 
 if __name__ == "__main__":
     print("== Start checking area, perimeter, volume, surfaceArea ==")
@@ -24,4 +34,5 @@ if __name__ == "__main__":
     assert surfaceArea(10, 10, 10) == 600
     assert surfaceArea(9999, 0, 9999) == 199960002
     assert surfaceArea(5, 8, 10) == 340
+    # assert surfaceArea(5, 8, -10) == -340
     print("== Finish checking area, perimeter, volume, surfaceArea ==")
