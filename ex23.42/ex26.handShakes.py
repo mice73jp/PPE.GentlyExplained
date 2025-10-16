@@ -10,7 +10,7 @@
 
 #     return count
 
-
+# Book solution
 def printHandshakes(people:list):
     numberOfHandShakes = 0
     for left in range(0, len(people) - 1):
