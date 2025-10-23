@@ -2,18 +2,11 @@ def drawBorder(width, height):
     if width < 2 or height < 2:
         return
 
-    def drawTop(width):
-        print('+', end='')
-        print('-' * (width - 2), end='')
-        print('+')
-
-    drawTop(width)
+    mid = width - 2
+    print('+' + '-' * mid + '+')
     for _ in range(height - 2):
-        print('|', end='')
-        for _ in range(width - 2):
-            print(' ', end='')
-        print('|')
-    drawTop(width)
+        print('|' + ' ' * mid + '|')
+    print('+' + '-' * mid + '+')
 
 
 if __name__ == '__main__':
