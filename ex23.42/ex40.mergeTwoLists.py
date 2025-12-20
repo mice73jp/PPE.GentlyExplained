@@ -4,11 +4,11 @@ def mergeTwoLists(forth, back):
     
     while fidx < flen or bidx < blen:
         if fidx == flen:
-            mergedList.append(back[bidx])
-            bidx += 1
+            mergedList.extend(back[bidx:])
+            bidx = blen
         elif bidx == blen:
-            mergedList.append(forth[fidx])
-            fidx += 1
+            mergedList.extend(forth[fidx:])
+            fidx = flen
         elif forth[fidx] < back[bidx]:
             mergedList.append(forth[fidx])
             fidx += 1
